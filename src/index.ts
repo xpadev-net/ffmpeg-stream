@@ -168,7 +168,7 @@ export class Converter {
       options,
       file,
       onBegin: async () => {
-        await new Promise((resolve, reject): void => {
+        await new Promise<void>((resolve, reject): void => {
           const writer = createWriteStream(file)
           stream.pipe(writer)
           stream.on("end", () => {
