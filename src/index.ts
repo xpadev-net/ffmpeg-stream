@@ -81,6 +81,11 @@ export class Converter {
   private readonly pipes: Pipe[] = [];
   private process?: ChildProcess;
   private killed = false;
+  private readonly ffmpegPath: string;
+
+  constructor(ffmpegPath: string = FFMPEG_PATH) {
+    this.ffmpegPath = ffmpegPath;
+  }
 
   /** @deprecated Use [[createInputStream]] or [[createInputFromFile]] */
   input(options?: Options): Writable;
@@ -233,9 +238,9 @@ export class Converter {
 
       const command = this.getSpawnArgs();
       const stdio = this.getStdioArg();
-      logger.debug(`spawn: ${FFMPEG_PATH} ${command.join(" ")}`);
+      logger.debug(`spawn: ${this.ffmpegPath} ${command.join(" ")}`);
       logger.debug(`spawn stdio: ${stdio.join(" ")}`);
-      this.process = spawn(FFMPEG_PATH, command, { stdio });
+      this.process = spawn(this.ffmpegPath, command, { stdio });
       const finished = this.handleProcess();
 
       for (const pipe of this.pipes) {
