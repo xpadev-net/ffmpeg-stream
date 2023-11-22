@@ -244,7 +244,7 @@ export class Converter {
 
       if (this.killed) {
         // the converter was already killed so stop it immediately
-        this.process.kill();
+        this.process.kill("SIGKILL");
       }
 
       await finished;
@@ -253,6 +253,10 @@ export class Converter {
         await pipe.onFinish?.();
       }
     }
+  }
+
+  stop(): void {
+    this.process?.kill("SIGINT");
   }
 
   kill(): void {
