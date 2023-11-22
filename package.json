@@ -1,6 +1,6 @@
 {
   "name": "@xpadev-net/ffmpeg-stream",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Node bindings to ffmpeg command, exposing stream based API",
   "author": "xpadev-net",
   "repository": "xpadev-net/ffmpeg-stream",
