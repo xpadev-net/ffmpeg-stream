@@ -1,9 +1,9 @@
 {
-  "name": "ffmpeg-stream",
+  "name": "@xpadev-net/ffmpeg-stream",
   "version": "0.7.0",
   "description": "Node bindings to ffmpeg command, exposing stream based API",
-  "author": "phaux <phaux4@gmail.com>",
-  "repository": "phaux/node-ffmpeg-stream",
+  "author": "xpadev-net",
+  "repository": "xpadev-net/ffmpeg-stream",
   "license": "MIT",
   "keywords": [
     "ffmpeg",
